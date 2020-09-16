@@ -6,15 +6,21 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.20.0",
+    "koa": "^2.13.0",
+    "koa-router": "^9.4.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "ws": "^7.3.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "front": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "back": "nodemon backend/app.js",
+    "start": "concurrently \"npm run back\" \"npm run front\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +36,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
   }
 }
